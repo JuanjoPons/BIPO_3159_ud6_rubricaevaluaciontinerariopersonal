@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rúbrica del itinerario · UD6</title>
+<meta name="description" content="Rúbrica de valoración del plan de itinerario personal (MBIPO 3159, UD6, RA4): contenido, formato, y presentación y defensa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
+<style>
+/* ds-allow-hardcode: archivo autónomo; tokens en :root */
+:root{--violeta:#5B5BE0;--violeta-osc:#4343C8;--coral:#FF7A50;--coral-txt:#D9481F;--tinta:#1F1A3D;--tinta-2:#4A4466;--papel:#fff;--crema:#FFF4EE;--linea:#D9D6EA;
+  --t-titulo:"Baloo 2","Arial Rounded MT Bold",system-ui,sans-serif;--t-cuerpo:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--violeta);color:var(--tinta);font-family:var(--t-cuerpo);font-size:16px;line-height:1.4}
+.hoja{max-width:1180px;margin:24px auto;background:var(--papel);border:3px solid var(--tinta);border-radius:24px;padding:clamp(16px,3vw,36px)}
+header{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:flex-end;justify-content:space-between;border-bottom:3px dashed var(--linea);padding-bottom:14px;margin-bottom:16px}
+.marca{font-family:var(--t-titulo);font-weight:600;color:var(--tinta-2);margin:0;font-size:.9rem}
+h1{font-family:var(--t-titulo);font-weight:800;color:var(--coral-txt);text-transform:uppercase;font-size:clamp(1.7rem,4vw,2.6rem);line-height:1;margin:.1em 0 0}
+h2{font-family:var(--t-titulo);font-weight:800;font-size:1.3rem;margin:0}
+.ra{font-size:.9rem;background:var(--crema);border-left:6px solid var(--coral);padding:8px 12px;border-radius:0 10px 10px 0;margin:0 0 16px}
+.datos{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px 16px;margin-bottom:18px}
+.datos label{display:flex;flex-direction:column;font-family:var(--t-titulo);font-weight:600;font-size:.85rem;gap:3px}
+input[type=text],input[type=date],input[type=number],select,textarea{font:inherit;font-family:var(--t-cuerpo);border:2px solid var(--tinta);border-radius:10px;padding:8px 10px;background:#fff;color:var(--tinta);min-height:42px}
+textarea{width:100%;min-height:90px;resize:vertical}
+:focus-visible{outline:3px solid var(--violeta-osc);outline-offset:2px}
+.acciones{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.btn{font-family:var(--t-titulo);font-weight:800;font-size:.95rem;border:2.5px solid var(--tinta);border-radius:999px;padding:.35em 1.1em;min-height:44px;cursor:pointer;background:#fff;color:var(--tinta);box-shadow:0 3px 0 var(--tinta)}
+.btn.prim{background:var(--coral)}
+.btn.sec{background:var(--violeta-osc);color:#fff}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--tinta)}
+.dim{margin:0 0 22px}
+.dim-cab{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;background:var(--violeta-osc);color:#fff;border:3px solid var(--tinta);border-bottom:0;border-radius:16px 16px 0 0;padding:8px 14px}
+.dim-cab h2{color:#fff}
+.peso{display:flex;align-items:center;gap:6px;font-family:var(--t-titulo);font-weight:600;font-size:.9rem}
+.peso input{width:76px;min-height:36px;padding:4px 8px}
+.nota-dim{font-family:var(--t-titulo);font-weight:800;background:#fff;color:var(--tinta);border-radius:999px;padding:.1em .8em;border:2px solid var(--tinta)}
+.tabla-wrap{overflow-x:auto;border:3px solid var(--tinta);border-radius:0 0 16px 16px}
+table{border-collapse:collapse;width:100%;min-width:860px}
+th,td{border:1.5px solid var(--linea);padding:8px 10px;vertical-align:top;text-align:left;font-size:.88rem}
+thead th{background:var(--crema);font-family:var(--t-titulo);font-weight:800;font-size:.85rem}
+thead th.n{text-align:center}
+tbody th{width:22%;font-weight:700;background:#FBFAFF}
+tbody th .ref{display:block;font-weight:400;font-size:.78rem;color:var(--tinta-2);margin-top:4px}
+td.celda{width:19.5%;padding:0}
+td.celda label{display:flex;gap:8px;padding:8px 10px;cursor:pointer;min-height:72px}
+td.celda input{accent-color:var(--coral-txt);width:18px;height:18px;flex:0 0 auto;margin-top:2px}
+td.celda:has(input:checked){background:#FFE1D4;box-shadow:inset 0 0 0 3px var(--coral-txt)}
+.pts{font-family:var(--t-titulo);font-weight:800;margin-right:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.resumen{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:8px 0 10px}
+.caja{border:3px solid var(--tinta);border-radius:16px;padding:10px 14px;background:#fff}
+.caja b{display:block;font-family:var(--t-titulo);font-size:.85rem;color:var(--tinta-2);font-weight:600}
+.caja span{font-family:var(--t-titulo);font-weight:800;font-size:1.6rem}
+.caja.total{background:var(--coral)}
+.caja.total b{color:var(--tinta)}
+.aviso{font-size:.85rem;color:var(--tinta-2)}
+.estado{min-height:1.4em;font-weight:600;color:var(--violeta-osc);margin:0 0 14px}
+details{border:2px solid var(--linea);border-radius:14px;padding:10px 14px;margin:16px 0}
+summary{font-family:var(--t-titulo);font-weight:800;cursor:pointer;min-height:32px}
+.clase table{min-width:640px}
+.mini{font-family:var(--t-titulo);font-weight:700;border:2px solid var(--tinta);border-radius:999px;background:#fff;color:var(--tinta);padding:.1em .7em;min-height:36px;cursor:pointer}
+.leyenda{font-size:.8rem;color:var(--tinta-2);margin-top:14px}
+.firma{display:none}
+@media (max-width:640px){body{font-size:15px}.hoja{margin:0;border-radius:0;border-width:0}}
+@media print{
+  @page{size:A4 landscape;margin:10mm}
+  body{background:#fff;font-size:10.5px}
+  .hoja{margin:0;border:0;padding:0;max-width:none}
+  .acciones,.estado,.no-print{display:none!important}
+  .tabla-wrap{overflow:visible}
+  table{min-width:0}
+  th,td{padding:4px 6px;font-size:9.5px}
+  td.celda label{min-height:0;padding:4px 6px}
+  td.celda:has(input:checked),.dim-cab,.caja.total{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .dim{break-inside:avoid;margin-bottom:10px}
+  .firma{display:flex;justify-content:space-between;margin-top:18px;font-size:11px}
+}
+</style>
+</head>
+<body>
+<main class="hoja">
+  <header>
+    <div>
+      <p class="marca">MBIPO (3159) · Itinerario personal para la empleabilidad · Unidad 6</p>
+      <h1>Rúbrica del itinerario personal</h1>
+    </div>
+    <p class="marca">Escala: 1 Insuficiente · 2 Suficiente · 3 Bien · 4 Excelente</p>
+  </header>
+
+  <p class="ra"><b>RA4.</b> Pon en marcha un itinerario propio analizando las diferentes opciones educativas y profesionales, valorando las ventajas e inconvenientes de cada una y examinando las que mejor se ajustan a sus posibilidades y preferencias.</p>
+
+  <form id="f" autocomplete="off" onsubmit="return false">
+  <div class="datos">
+    <label>Alumno/a (nombre o código)<input type="text" id="alumno"></label>
+    <label>Grupo<input type="text" id="grupo"></label>
+    <label>Fecha<input type="date" id="fecha"></label>
+    <label>Formato de la exposición
+      <select id="modo"><option value="">Sin indicar</option><option>Elevator pitch</option><option>Vídeo grabado previamente</option></select></label>
+  </div>
+
+  <div class="acciones no-print">
+    <button type="button" class="btn prim" id="guardar">Guardar en la lista de clase</button>
+    <button type="button" class="btn" id="nuevo">Nuevo alumno/a</button>
+    <button type="button" class="btn sec" id="imprimir">Imprimir / PDF</button>
+  </div>
+  <p class="estado" id="estado" role="status" aria-live="polite"></p>
+
+  <div id="dimensiones"></div>
+
+  <h2>Resultado</h2>
+  <div class="resumen">
+    <div class="caja"><b>Contenido</b><span id="r-contenido">-</span></div>
+    <div class="caja"><b>Formato</b><span id="r-formato">-</span></div>
+    <div class="caja"><b>Presentación y defensa</b><span id="r-defensa">-</span></div>
+    <div class="caja total"><b>Nota final (sobre 10)</b><span id="r-total">-</span></div>
+  </div>
+  <p class="aviso" id="avisoPesos" aria-live="polite"></p>
+
+  <label for="obs" style="font-family:var(--t-titulo);font-weight:800">Observaciones y propuestas de mejora</label>
+  <textarea id="obs"></textarea>
+
+  <div class="firma"><span>Firma del profesor/a: ______________________</span><span>Visto el alumno/a: ______________________</span></div>
+  </form>
+
+  <details class="clase no-print" id="clase">
+    <summary>Lista de clase guardada en este navegador (<span id="numClase">0</span>)</summary>
+    <p class="aviso">Se guarda solo en este equipo y navegador. Exporta a CSV para pasarlo a tu cuaderno de notas.</p>
+    <div class="acciones">
+      <button type="button" class="btn" id="csv">Exportar CSV</button>
+      <button type="button" class="btn" id="vaciar">Vaciar lista</button>
+    </div>
+    <div class="tabla-wrap" style="border-radius:16px"><table>
+      <thead><tr><th scope="col">Alumno/a</th><th scope="col">Grupo</th><th scope="col">Fecha</th><th scope="col">Contenido</th><th scope="col">Formato</th><th scope="col">Pres. y defensa</th><th scope="col">Nota</th><th scope="col">Acciones</th></tr></thead>
+      <tbody id="tClase"></tbody>
+    </table></div>
+  </details>
+
+  <p class="leyenda">Fuentes: «Resultado de aprendizaje Unidad 6» (RA4, criterios a, b y c, competencias k, s, w, l) y «Guía paso a paso para crear tu plan de itinerario personal» (apartados del documento encuadernado, exposición oral y diana de autoevaluación). Los descriptores de nivel, los pesos y la relación con criterios y competencias son una propuesta y pueden ajustarse.</p>
+</main>
+
+<script>
+(function(){
+const DIM=[
+ {id:'contenido',nombre:'Contenido',peso:50,items:[
+  {t:'Memoria de autoconocimiento',r:'Personalidad, habilidades sociales y DAFO · Paso 1',n:['Falta o se limita a copiar enunciados; DAFO ausente o incompleto.','Incluye personalidad, habilidades sociales y DAFO, pero de forma superficial o con elementos mal clasificados.','Los tres apartados están completos; el DAFO distingue bien lo interno y lo externo.','Análisis personal y profundo; el DAFO es preciso y se relaciona con sus decisiones.']},
+  {t:'Anexos de retos personales',r:'Rueda de la Vida e Ikigai · Competencia l',n:['No los incluye.','Incluye solo uno, o ambos sin reflexión.','Incluye ambos con una reflexión breve.','Ambos completos y con conclusiones que usa en su plan.']},
+  {t:'Informe de orientación',r:'Test GR y ocupaciones asociadas · Criterios a y b',n:['No aporta el test ni investiga ocupaciones.','Aporta el test, pero la investigación de ocupaciones es mínima.','Relaciona los resultados del test con ocupaciones e indica requisitos de acceso e itinerarios formativos.','Compara opciones con sus ventajas e inconvenientes y selecciona las que mejor se ajustan a su perfil.']},
+  {t:'Plan de actuación',r:'Perfil profesional, meta y objetivos realistas · Criterio c · Competencia w',n:['Sin perfil ni meta definidos.','Perfil o meta poco concretos; objetivos vagos.','Perfil argumentado, meta clara y objetivos a corto y medio plazo.','Decisión bien argumentada desde sus intereses y metas, con objetivos realistas encadenados hacia la meta final.']},
+  {t:'Plan de aproximación a la búsqueda de empleo',r:'Estrategias, documentos y networking · Competencia k',n:['No lo incluye.','Incluye algún elemento suelto (por ejemplo, solo el CV).','Recoge estrategias de búsqueda, CV y carta adaptados, y contactos o canales informales.','Plan completo y aplicable: canales concretos, documentos adaptados a la meta y red de contactos identificada.']}
+ ]},
+ {id:'formato',nombre:'Formato',peso:20,items:[
+  {t:'Documento único y coherente',r:'Encuadernación física o digital · Paso 5.1',n:['Entrega piezas sueltas o incompletas.','Documento reunido, pero desordenado o con apartados que faltan.','Documento único, ordenado según los apartados del plan.','Documento cuidado, con portada, índice y apartados bien enlazados entre sí.']},
+  {t:'Redacción y resultados de cada tarea',r:'Diana 02 · Redacción y tareas',n:['Textos confusos o con muchos errores; tareas sin resultado.','Se entiende, aunque con errores frecuentes o tareas a medias.','Redacción clara y correcta; cada tarea muestra su resultado.','Redacción clara, personal y cuidada; resultados de cada tarea bien presentados.']},
+  {t:'Planificación y plazos',r:'Diana 01 · Competencia s',n:['No entrega o entrega muy fuera de plazo.','Entrega con retraso o necesita recordatorios constantes.','Entrega en plazo y con autonomía.','Entrega en plazo, con autonomía y avances regulares a lo largo del curso.']}
+ ]},
+ {id:'defensa',nombre:'Presentación y defensa',peso:30,items:[
+  {t:'Claridad y concisión de la exposición',r:'Elevator pitch o vídeo · Diana 04',n:['No expone o la exposición no se entiende.','Expone leyendo o de forma desordenada; se alarga o se queda corto.','Exposición clara y ordenada, ajustada al tiempo.','Exposición clara, breve, directa y persuasiva; transmite su visión de futuro.']},
+  {t:'Defensa de sus decisiones',r:'Criterios a y c · Competencia w',n:['No sabe explicar por qué ha elegido su itinerario.','Explica su elección sin argumentos o sin opciones alternativas.','Justifica su itinerario comparando ventajas e inconvenientes de alguna opción.','Defiende su itinerario con argumentos propios, ventajas e inconvenientes, y lo vincula con sus intereses y metas.']},
+  {t:'Respuesta a preguntas',r:'Compañeros y docentes · Competencia k',n:['No responde.','Responde con dudas o fuera de tema.','Responde con corrección a las preguntas planteadas.','Responde con seguridad y aporta ejemplos de su propio plan.']},
+  {t:'Autoevaluación',r:'Diana (4 dimensiones) y 5 preguntas de reflexión · Pasos 5.3 y 5.4',n:['No la realiza.','La realiza de forma incompleta o sin reflexionar.','Completa la diana y responde a las cinco preguntas.','Autoevaluación honesta y razonada, con propuestas concretas para mejorar su plan.']}
+ ]}
+];
+const NIV=['Insuficiente','Suficiente','Bien','Excelente'];
+const $=id=>document.getElementById(id);
+
+DIM.forEach(d=>{
+  let h='<section class="dim" aria-labelledby="h-'+d.id+'"><div class="dim-cab"><h2 id="h-'+d.id+'">'+d.nombre+'</h2>'+
+   '<span class="peso"><label for="p-'+d.id+'">Peso (%)</label><input type="number" min="0" max="100" step="5" id="p-'+d.id+'" value="'+d.peso+'"></span>'+
+   '<span class="nota-dim" id="n-'+d.id+'">-</span></div><div class="tabla-wrap"><table><thead><tr><th scope="col">Aspecto</th>'+
+   NIV.map((n,k)=>'<th scope="col" class="n">'+(k+1)+' · '+n+'</th>').join('')+'</tr></thead><tbody>';
+  d.items.forEach((it,j)=>{
+    const nm=d.id+'-'+j;
+    h+='<tr role="radiogroup" aria-labelledby="a-'+nm+'"><th scope="row" id="a-'+nm+'">'+it.t+'<span class="ref">'+it.r+'</span></th>'+
+      it.n.map((txt,k)=>'<td class="celda"><label><input type="radio" name="'+nm+'" value="'+(k+1)+'"><span><span class="pts">'+(k+1)+'</span><span class="sr"> '+NIV[k]+': </span> '+txt+'</span></label></td>').join('')+'</tr>';
+  });
+  $('dimensiones').insertAdjacentHTML('beforeend',h+'</tbody></table></div></section>');
+});
+
+const fmt=v=>v==null?'-':v.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2});
+function calcular(){
+  const res={};let faltan=0;
+  DIM.forEach(d=>{
+    let s=0,c=0;
+    d.items.forEach((_,j)=>{const x=document.querySelector('input[name="'+d.id+'-'+j+'"]:checked');if(x){s+=+x.value;c++}else faltan++});
+    res[d.id]=c===d.items.length?s/(4*c)*10:null;
+    $('n-'+d.id).textContent=res[d.id]==null?(c?'Incompleto':'-'):fmt(res[d.id])+' / 10';
+    $('r-'+d.id).textContent=fmt(res[d.id]);
+  });
+  const pesos=DIM.map(d=>Math.max(0,+$('p-'+d.id).value||0)),suma=pesos.reduce((a,b)=>a+b,0);
+  $('avisoPesos').textContent=suma!==100?'Atención: los pesos suman '+suma+' % (deberían sumar 100 %). La nota final se pondera sobre esa suma.':(faltan?'Faltan '+faltan+' aspecto(s) por valorar.':'Rúbrica completa.');
+  let total=null;
+  if(DIM.every(d=>res[d.id]!=null)&&suma>0)total=DIM.reduce((a,d,k)=>a+res[d.id]*pesos[k],0)/suma;
+  $('r-total').textContent=fmt(total);
+  return {res,total};
+}
+document.addEventListener('change',calcular);
+document.addEventListener('input',e=>{if(e.target.type==='number')calcular()});
+
+function leer(){
+  const sel={};document.querySelectorAll('.celda input:checked').forEach(x=>sel[x.name]=+x.value);
+  const c=calcular();
+  return {alumno:$('alumno').value.trim(),grupo:$('grupo').value.trim(),fecha:$('fecha').value,modo:$('modo').value,obs:$('obs').value,
+    pesos:DIM.map(d=>+$('p-'+d.id).value||0),sel,notas:{contenido:c.res.contenido,formato:c.res.formato,defensa:c.res.defensa,total:c.total}};
+}
+function poner(r){
+  $('alumno').value=r.alumno||'';$('grupo').value=r.grupo||'';$('fecha').value=r.fecha||'';$('modo').value=r.modo||'';$('obs').value=r.obs||'';
+  DIM.forEach((d,k)=>{if(r.pesos)$('p-'+d.id).value=r.pesos[k]});
+  document.querySelectorAll('.celda input').forEach(x=>{x.checked=!!(r.sel&&r.sel[x.name]===+x.value)});
+  calcular();
+}
+const K='ud6-rubrica-clase';
+const cargar=()=>{try{return JSON.parse(localStorage.getItem(K)||'[]')}catch(_){return[]}};
+const salvar=l=>{try{localStorage.setItem(K,JSON.stringify(l));return true}catch(_){return false}};
+const esc=s=>String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function pintarClase(){
+  const l=cargar();$('numClase').textContent=l.length;
+  $('tClase').innerHTML=l.length?l.map((r,k)=>'<tr><td>'+esc(r.alumno)+'</td><td>'+esc(r.grupo)+'</td><td>'+esc(r.fecha)+'</td><td>'+fmt(r.notas.contenido)+'</td><td>'+fmt(r.notas.formato)+'</td><td>'+fmt(r.notas.defensa)+'</td><td><b>'+fmt(r.notas.total)+'</b></td><td><button type="button" class="mini" data-abrir="'+k+'">Abrir</button> <button type="button" class="mini" data-borrar="'+k+'">Quitar</button></td></tr>').join(''):'<tr><td colspan="8">Todavía no hay alumnado guardado.</td></tr>';
+}
+const aviso=t=>{$('estado').textContent=t};
+
+$('guardar').onclick=()=>{
+  const r=leer();
+  if(!r.alumno){aviso('Escribe el nombre o código del alumno/a antes de guardar.');$('alumno').focus();return}
+  const l=cargar(),k=l.findIndex(x=>x.alumno.toLowerCase()===r.alumno.toLowerCase()&&x.grupo===r.grupo);
+  if(k>=0)l[k]=r;else l.push(r);
+  aviso(salvar(l)?(k>=0?'Actualizada la valoración de ':'Guardada la valoración de ')+r.alumno+'.':'No se ha podido guardar en este navegador (modo privado o almacenamiento bloqueado). Puedes imprimir la rúbrica igualmente.');
+  pintarClase();
+};
+$('nuevo').onclick=()=>{poner({grupo:$('grupo').value,fecha:$('fecha').value,pesos:DIM.map(d=>+$('p-'+d.id).value)});aviso('Rúbrica en blanco. Se mantienen el grupo, la fecha y los pesos.');$('alumno').focus()};
+$('imprimir').onclick=()=>window.print();
+$('tClase').addEventListener('click',e=>{
+  const a=e.target.dataset.abrir,b=e.target.dataset.borrar,l=cargar();
+  if(a!=null){poner(l[+a]);aviso('Abierta la valoración de '+l[+a].alumno+'.');window.scrollTo({top:0,behavior:'smooth'});$('alumno').focus()}
+  if(b!=null&&confirm('¿Quitar a '+l[+b].alumno+' de la lista?')){l.splice(+b,1);salvar(l);pintarClase()}
+});
+$('vaciar').onclick=()=>{if(confirm('¿Vaciar toda la lista de clase guardada en este navegador?')){salvar([]);pintarClase()}};
+$('csv').onclick=()=>{
+  const l=cargar();if(!l.length){aviso('No hay alumnado guardado para exportar.');return}
+  const cab=['Alumno','Grupo','Fecha','Formato exposición'];
+  DIM.forEach(d=>d.items.forEach(it=>cab.push(d.nombre+': '+it.t)));
+  cab.push('Contenido (/10)','Formato (/10)','Presentación y defensa (/10)','Nota final (/10)','Observaciones');
+  const n=v=>v==null?'':String(Math.round(v*100)/100).replace('.',',');
+  const filas=l.map(r=>{const f=[r.alumno,r.grupo,r.fecha,r.modo];DIM.forEach(d=>d.items.forEach((_,j)=>f.push(r.sel[d.id+'-'+j]||'')));
+    f.push(n(r.notas.contenido),n(r.notas.formato),n(r.notas.defensa),n(r.notas.total),r.obs);return f});
+  const csv='﻿'+[cab,...filas].map(f=>f.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(';')).join('\r\n');
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download='UD6_rubrica_itinerario_clase.csv';
+  document.body.appendChild(a);a.click();a.remove();
+};
+
+if(!$('fecha').value)$('fecha').value=new Date().toISOString().slice(0,10);
+calcular();pintarClase();
+})();
+</script>
+</body>
+</html>
